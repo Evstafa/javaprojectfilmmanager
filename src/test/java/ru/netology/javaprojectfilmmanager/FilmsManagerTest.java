@@ -51,4 +51,45 @@ public class FilmsManagerTest {
         String[] expected = {"Film I", "Film II", "Film III", "Film IV", "Film V", "Film VI", "Film VII", "Film VIII", "Film IX", "Film X", "Film XI"};
         String[] actual = manager.findlast();
     }
+
+    @Test
+    public void testLimitTwo() {
+        FilmsManager manager = new FilmsManager(11);
+        manager.findlast();
+        manager.addFilm("Film I");
+        manager.addFilm("Film II");
+        manager.addFilm("Film III");
+        manager.addFilm("Film IV");
+        manager.addFilm("Film V");
+        manager.addFilm("Film VI");
+        manager.addFilm("Film VII");
+        manager.addFilm("Film VIII");
+        manager.addFilm("Film IX");
+        manager.addFilm("Film X");
+
+        String[] expected = {"Film I", "Film II", "Film III", "Film IV", "Film V", "Film VI", "Film VII", "Film VIII", "Film IX", "Film X"};
+        String[] actual = manager.findlast();
+    }
+
+    @Test
+    public void testLimitTwoThree() {
+        FilmsManager manager = new FilmsManager(11);
+        manager.findlast();
+        manager.addFilm("Film I");
+        manager.addFilm("Film II");
+        manager.addFilm("Film III");
+        manager.addFilm("Film IV");
+        manager.addFilm("Film V");
+        manager.addFilm("Film VI");
+        manager.addFilm("Film VII");
+        manager.addFilm("Film VIII");
+        manager.addFilm("Film IX");
+        manager.addFilm("Film X");
+        manager.addFilm("Film XI");
+        manager.addFilm("Film XII");
+
+        String[] expected = {"Film I", "Film II", "Film III", "Film IV", "Film V", "Film VI", "Film VII", "Film VIII", "Film IX", "Film X", "Film XI", "Film XII"};
+        String[] actual = manager.findlast();
+    }
 }
+
