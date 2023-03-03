@@ -33,7 +33,7 @@ public class FilmsManagerTest {
     }
 
     @Test
-    public void testLimit() {
+    public void testLimitOfFilmsIsTheSame() {
         FilmsManager manager = new FilmsManager(11);
         manager.findlast();
         manager.addFilm("Film I");
@@ -53,7 +53,7 @@ public class FilmsManagerTest {
     }
 
     @Test
-    public void testLimitTwo() {
+    public void testMoviesLessTheLimit() {
         FilmsManager manager = new FilmsManager(11);
         manager.findlast();
         manager.addFilm("Film I");
@@ -72,7 +72,7 @@ public class FilmsManagerTest {
     }
 
     @Test
-    public void testLimitTwoThree() {
+    public void testMoviesOverTheLimit() {
         FilmsManager manager = new FilmsManager(11);
         manager.findlast();
         manager.addFilm("Film I");
