@@ -203,6 +203,7 @@ public class FilmsManagerTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
+
     @Test
     public void WhenTheMoviesIsZeroAndTheLimitIsEleven() {
         FilmsManager manager = new FilmsManager(11);
@@ -221,6 +222,27 @@ public class FilmsManagerTest {
         String[] expected = {"Film I"};
         String[] actual = manager.findlast();
 
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void testMoviesMoreThenLimit() {
+        FilmsManager manager = new FilmsManager();
+        manager.setLimitFilms(5);
+        manager.getLimitFilms();
+
+        manager.addFilm("Film I");
+        manager.addFilm("Film II");
+        manager.addFilm("Film III");
+        manager.addFilm("Film IV");
+        manager.addFilm("Film V");
+        manager.addFilm("Film VI");
+        manager.addFilm("Film VII");
+        manager.addFilm("Film VIII");
+        manager.addFilm("Film IX");
+        manager.addFilm("Film X");
+
+        String[] expected = {"Film X", "Film IX", "Film VIII", "Film VII", "Film VI"};
+        String[] actual = manager.findlast();
         Assertions.assertArrayEquals(expected, actual);
     }
 }

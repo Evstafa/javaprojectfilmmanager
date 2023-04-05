@@ -3,7 +3,12 @@ package ru.netology.javaprojectfilmmanager;
 public class FilmsManager {
     private String[] films = new String[0];
     private int limit;
-
+    public void setLimitFilms(int limit) {
+        this.limit = limit;
+    }
+    public int getLimitFilms() {
+        return limit;
+    }
     public FilmsManager() {
         this.limit = 10;
     }
